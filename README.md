@@ -1,6 +1,6 @@
 # Mini social API: Rust + SQLite
 
-Single static binary (~2.6 MB image, `FROM scratch`), implementing the Vibe Zone API contract.
+Single static binary (~1.1 MB image, `FROM scratch`), implementing the Vibe Zone API contract.
 
 ## Design
 
@@ -9,6 +9,8 @@ Single static binary (~2.6 MB image, `FROM scratch`), implementing the Vibe Zone
   - `posts(id INTEGER PRIMARY KEY, author, content, created_at)`
   - `likes(post_id, user, PRIMARY KEY(post_id,user)) WITHOUT ROWID`: idempotency comes from `INSERT OR IGNORE`.
 - **Group commit:** all writes from one event-loop batch run in one transaction. 200/201 replies are written to sockets only after `COMMIT` returns, so every acknowledged write is already in the database file.
+- **No fsync stalls:** the default `SQLITE_SYNC=OFF` still writes every commit to the kernel with `write()` before replying, so acknowledged data survives SIGKILL of the container. Only an OS crash or power loss could lose it, and the contract doesn't require surviving those. Set `NORMAL` or `FULL` for durability across power loss.
+- **Size:** SQLite is compiled without the features this API doesn't use (full-text search, R-tree, JSON, extension loading and others) and optimised for size. The default allocator is used.
 - **Reads:** like counts per post and the newest 20 posts are kept in memory. They are rebuilt from SQLite at startup. The feed JSON is cached and rebuilt only when a post is added or a top-20 post gets a like.
 - **Connections:**
   - Keep-alive is on at normal load.
@@ -29,7 +31,7 @@ Optional environment variables:
 | --- | --- | --- |
 | `PORT` | 8080 | Listen port |
 | `DATA_DIR` | /data | SQLite directory |
-| `SQLITE_SYNC` | NORMAL | `OFF`, `NORMAL` or `FULL` |
+| `SQLITE_SYNC` | OFF | `OFF`, `NORMAL` or `FULL` |
 | `KEEPALIVE_MIN_CONNS` | 32 | Keep-alive is off below this many open connections |
 | `KEEPALIVE_CONNS` | nofile − 576 | Keep-alive is off above this many open connections |
 | `MAX_CONNS` | nofile − 64 | Accepting pauses above this many open connections |

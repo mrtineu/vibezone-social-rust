@@ -11,9 +11,6 @@ use rusqlite::{params, Connection};
 use std::collections::VecDeque;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-#[global_allocator]
-static GLOBAL: mimalloc::MiMalloc = mimalloc::MiMalloc;
-
 const MAX_BODY: usize = 16 * 1024;
 const MAX_HEAD: usize = 8 * 1024;
 const FEED_LEN: usize = 20;
@@ -45,11 +42,13 @@ impl App {
     fn open(path: &str) -> App {
         let db = Connection::open(path).unwrap_or_else(|e| fatal("open db", e));
         db.busy_timeout(std::time::Duration::from_secs(20)).ok();
-        let sync = std::env::var("SQLITE_SYNC").unwrap_or_else(|_| "NORMAL".into());
+        // OFF: commits reach the kernel via write() before any reply is sent, so they
+        // survive SIGKILL of the container; no fsync stalls the single event loop.
+        let sync = std::env::var("SQLITE_SYNC").unwrap_or_else(|_| "OFF".into());
         let sync = match sync.to_ascii_uppercase().as_str() {
-            "OFF" => "OFF",
+            "NORMAL" => "NORMAL",
             "FULL" => "FULL",
-            _ => "NORMAL",
+            _ => "OFF",
         };
         // EXCLUSIVE before WAL: the WAL index lives in heap memory, no -shm mmap.
         db.execute_batch(&format!(

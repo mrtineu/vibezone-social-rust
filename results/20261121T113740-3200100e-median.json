@@ -1,6 +1,6 @@
 {
-  "id": "20261121T112330-a7f72ebd",
-  "started_at": "2026-11-21T11:23:30Z",
+  "id": "20261121T113740-3200100e",
+  "started_at": "2026-11-21T11:37:40Z",
   "source": "vibezone-social:local",
   "status": "passed",
   "profile": {
@@ -44,15 +44,15 @@
   "profile_hash": "a9c4cc6834f1b76aeb32d37dcbb22a9c2b3416b2280a0e9a02259c3ac9ba03a4",
   "max_vus": 10,
   "throughput_rps": 4.6,
-  "p95_ms": 10.799999999999997,
-  "p99_ms": 12.560000000000002,
+  "p95_ms": 11.899999999999999,
+  "p99_ms": 12.460000000000008,
   "error_percent": 0,
   "source_kind": "image",
   "source_commit": null,
-  "image_id": "sha256:30ec51a17ff291b48cd68fdcd99f47e26a8caed3f102d44c856f58db25ca8b3f",
+  "image_id": "sha256:5b8e8590523f2dbbf6a60cc02099f010a971341c5e294398707a86eec7cd0585",
   "registry_digests": [],
-  "image_bytes": 2614096,
-  "image_gzip_bytes": 1357119,
+  "image_bytes": 1112512,
+  "image_gzip_bytes": 606301,
   "tools": {
     "probe": "sha256:4076016aea5420e5c87eb52280edfc527ace1ce31dc1c9288b1cc4ef9a0e8905",
     "k6": "sha256:5f4ce38d0f255612e349585cc23fb25f94be405fdcc547ff284227ab6b4b8a14"
@@ -71,25 +71,25 @@
     "empty": true
   },
   "cold_start_samples_ms": [
-    1104.8,
-    1228.474,
-    1160.878,
-    1645.38,
-    1604.306,
-    1661.086,
-    1629.682,
-    1569.072,
-    1539.356
+    1936.359,
+    1791.034,
+    1776.427,
+    1803.201,
+    1684.771,
+    1749.537,
+    1599.617,
+    1575.326,
+    1793.697
   ],
-  "cold_start_ms": 1569.072,
+  "cold_start_ms": 1776.427,
   "seed": {
     "posts": 50,
     "likes": 100
   },
-  "finished_at": "2026-11-21T11:26:25Z",
+  "finished_at": "2026-11-21T11:40:39Z",
   "repetitions": [
     {
-      "id": "20261121T112330-a7f72ebd",
+      "id": "20261121T113740-3200100e",
       "max_vus": 10,
       "levels": [
         {
@@ -107,10 +107,10 @@
           "error_percent": 0,
           "hold_error_percent": 0,
           "attempt_requests": 41,
-          "attempt_throughput_rps": 4.831287476711593,
-          "attempt_p95_ms": 0.738363,
-          "attempt_p99_ms": 1.0715930000000002,
-          "duration_ms": 8486.350729,
+          "attempt_throughput_rps": 4.76155609046198,
+          "attempt_p95_ms": 0.811128,
+          "attempt_p99_ms": 1.0601244000000003,
+          "duration_ms": 8610.630479,
           "k6_exit_code": 0,
           "generator_throttled_ratio": 0.0
         },
@@ -118,136 +118,21 @@
           "vus": 5,
           "passed": true,
           "full_hold": true,
-          "hold_requests": 14,
+          "hold_requests": 12,
           "minimum_requests": 5,
           "observed_vus": 6,
           "semantic_errors": 0,
-          "integrity_completed": 5,
-          "throughput_rps": 2.8,
-          "p95_ms": 8.399999999999999,
-          "p99_ms": 10.479999999999997,
+          "integrity_completed": 8,
+          "throughput_rps": 2.4,
+          "p95_ms": 12.349999999999998,
+          "p99_ms": 13.670000000000002,
           "error_percent": 0,
           "hold_error_percent": 0,
-          "attempt_requests": 55,
-          "attempt_throughput_rps": 6.423082678280278,
-          "attempt_p95_ms": 1.3409227999999997,
-          "attempt_p99_ms": 6.646285260000001,
-          "duration_ms": 8562.866579,
-          "k6_exit_code": 0,
-          "generator_throttled_ratio": 0.0
-        },
-        {
-          "vus": 10,
-          "passed": true,
-          "full_hold": true,
-          "hold_requests": 25,
-          "minimum_requests": 10,
-          "observed_vus": 11,
-          "semantic_errors": 0,
-          "integrity_completed": 7,
-          "throughput_rps": 5.0,
-          "p95_ms": 10.799999999999997,
-          "p99_ms": 12.519999999999996,
-          "error_percent": 0,
-          "hold_error_percent": 0,
-          "attempt_requests": 81,
-          "attempt_throughput_rps": 8.463353861309924,
-          "attempt_p95_ms": 1.56304,
-          "attempt_p99_ms": 4.3282154,
-          "duration_ms": 9570.673911,
-          "k6_exit_code": 0,
-          "generator_throttled_ratio": 0.0
-        }
-      ],
-      "correctness": {
-        "passed": true,
-        "checks": 145,
-        "phase": "prepare",
-        "restart_verified": false,
-        "seconds": 0.498
-      },
-      "durability": {
-        "passed": true,
-        "checks": 6,
-        "phase": "verify",
-        "restart_verified": true,
-        "seconds": 0.021
-      },
-      "post_load_correctness": {
-        "passed": true,
-        "checks": 145,
-        "phase": "prepare",
-        "restart_verified": false,
-        "seconds": 0.315
-      },
-      "post_load_durability": {
-        "passed": true,
-        "checks": 6,
-        "phase": "verify",
-        "restart_verified": true,
-        "seconds": 0.069
-      },
-      "measured_feed_restart_verified": {
-        "passed": true,
-        "phase": "verify",
-        "checks": 33
-      },
-      "cold_start_samples_ms": [
-        1104.8,
-        1228.474,
-        1160.878
-      ],
-      "storage": {
-        "bytes": 67108864,
-        "writable": true,
-        "empty": true
-      }
-    },
-    {
-      "id": "20261121T112424-8f9fce9e",
-      "max_vus": 10,
-      "levels": [
-        {
-          "vus": 2,
-          "passed": true,
-          "full_hold": true,
-          "hold_requests": 5,
-          "minimum_requests": 2,
-          "observed_vus": 3,
-          "semantic_errors": 0,
-          "integrity_completed": 5,
-          "throughput_rps": 1.0,
-          "p95_ms": 4,
-          "p99_ms": 4,
-          "error_percent": 0,
-          "hold_error_percent": 0,
-          "attempt_requests": 41,
-          "attempt_throughput_rps": 4.5920419354821,
-          "attempt_p95_ms": 0.499807,
-          "attempt_p99_ms": 0.5577782,
-          "duration_ms": 8928.489891,
-          "k6_exit_code": 0,
-          "generator_throttled_ratio": 0.0
-        },
-        {
-          "vus": 5,
-          "passed": true,
-          "full_hold": true,
-          "hold_requests": 13,
-          "minimum_requests": 5,
-          "observed_vus": 6,
-          "semantic_errors": 0,
-          "integrity_completed": 5,
-          "throughput_rps": 2.6,
-          "p95_ms": 8.799999999999997,
-          "p99_ms": 9.759999999999998,
-          "error_percent": 0,
-          "hold_error_percent": 0,
-          "attempt_requests": 58,
-          "attempt_throughput_rps": 7.108552993349545,
-          "attempt_p95_ms": 0.5629012499999997,
-          "attempt_p99_ms": 6.57205243,
-          "duration_ms": 8159.185147,
+          "attempt_requests": 73,
+          "attempt_throughput_rps": 8.072815598828301,
+          "attempt_p95_ms": 0.6997883999999999,
+          "attempt_p99_ms": 8.97375476,
+          "duration_ms": 9042.693854,
           "k6_exit_code": 0,
           "generator_throttled_ratio": 0.0
         },
@@ -262,14 +147,14 @@
           "integrity_completed": 5,
           "throughput_rps": 4.6,
           "p95_ms": 11.899999999999999,
-          "p99_ms": 13.560000000000002,
+          "p99_ms": 12,
           "error_percent": 0,
           "hold_error_percent": 0,
-          "attempt_requests": 75,
-          "attempt_throughput_rps": 8.662411833192746,
-          "attempt_p95_ms": 2.4858285999999956,
-          "attempt_p99_ms": 11.03932938,
-          "duration_ms": 8658.09678,
+          "attempt_requests": 77,
+          "attempt_throughput_rps": 8.185069929778491,
+          "attempt_p95_ms": 2.7207480000000075,
+          "attempt_p99_ms": 5.280490319999999,
+          "duration_ms": 9407.372284,
           "k6_exit_code": 0,
           "generator_throttled_ratio": 0.0
         }
@@ -279,28 +164,28 @@
         "checks": 145,
         "phase": "prepare",
         "restart_verified": false,
-        "seconds": 0.457
+        "seconds": 0.606
       },
       "durability": {
         "passed": true,
         "checks": 6,
         "phase": "verify",
         "restart_verified": true,
-        "seconds": 0.079
+        "seconds": 0.032
       },
       "post_load_correctness": {
         "passed": true,
         "checks": 145,
         "phase": "prepare",
         "restart_verified": false,
-        "seconds": 0.485
+        "seconds": 0.395
       },
       "post_load_durability": {
         "passed": true,
         "checks": 6,
         "phase": "verify",
         "restart_verified": true,
-        "seconds": 0.03
+        "seconds": 0.022
       },
       "measured_feed_restart_verified": {
         "passed": true,
@@ -308,9 +193,9 @@
         "checks": 33
       },
       "cold_start_samples_ms": [
-        1645.38,
-        1604.306,
-        1661.086
+        1936.359,
+        1791.034,
+        1776.427
       ],
       "storage": {
         "bytes": 67108864,
@@ -319,7 +204,122 @@
       }
     },
     {
-      "id": "20261121T112526-1bf1aee4",
+      "id": "20261121T113840-12659f4a",
+      "max_vus": 10,
+      "levels": [
+        {
+          "vus": 2,
+          "passed": true,
+          "full_hold": true,
+          "hold_requests": 6,
+          "minimum_requests": 2,
+          "observed_vus": 3,
+          "semantic_errors": 0,
+          "integrity_completed": 4,
+          "throughput_rps": 1.2,
+          "p95_ms": 13.25,
+          "p99_ms": 14.650000000000002,
+          "error_percent": 0,
+          "hold_error_percent": 0,
+          "attempt_requests": 37,
+          "attempt_throughput_rps": 4.404355414741134,
+          "attempt_p95_ms": 0.6644711999999999,
+          "attempt_p99_ms": 1.0702033600000003,
+          "duration_ms": 8400.775259,
+          "k6_exit_code": 0,
+          "generator_throttled_ratio": 0.0069087671328692075
+        },
+        {
+          "vus": 5,
+          "passed": true,
+          "full_hold": true,
+          "hold_requests": 15,
+          "minimum_requests": 5,
+          "observed_vus": 6,
+          "semantic_errors": 0,
+          "integrity_completed": 4,
+          "throughput_rps": 3.0,
+          "p95_ms": 7.899999999999997,
+          "p99_ms": 9.579999999999998,
+          "error_percent": 0,
+          "hold_error_percent": 0,
+          "attempt_requests": 54,
+          "attempt_throughput_rps": 6.14860310229416,
+          "attempt_p95_ms": 1.5083699499999954,
+          "attempt_p99_ms": 20.34980627,
+          "duration_ms": 8782.482639,
+          "k6_exit_code": 0,
+          "generator_throttled_ratio": 0.0
+        },
+        {
+          "vus": 10,
+          "passed": true,
+          "full_hold": true,
+          "hold_requests": 25,
+          "minimum_requests": 10,
+          "observed_vus": 11,
+          "semantic_errors": 0,
+          "integrity_completed": 5,
+          "throughput_rps": 5.0,
+          "p95_ms": 13.599999999999994,
+          "p99_ms": 15.519999999999996,
+          "error_percent": 0,
+          "hold_error_percent": 0,
+          "attempt_requests": 70,
+          "attempt_throughput_rps": 7.485595222623149,
+          "attempt_p95_ms": 4.915681499999992,
+          "attempt_p99_ms": 15.788092980000016,
+          "duration_ms": 9351.293774,
+          "k6_exit_code": 0,
+          "generator_throttled_ratio": 0.0
+        }
+      ],
+      "correctness": {
+        "passed": true,
+        "checks": 145,
+        "phase": "prepare",
+        "restart_verified": false,
+        "seconds": 0.574
+      },
+      "durability": {
+        "passed": true,
+        "checks": 6,
+        "phase": "verify",
+        "restart_verified": true,
+        "seconds": 0.086
+      },
+      "post_load_correctness": {
+        "passed": true,
+        "checks": 145,
+        "phase": "prepare",
+        "restart_verified": false,
+        "seconds": 0.373
+      },
+      "post_load_durability": {
+        "passed": true,
+        "checks": 6,
+        "phase": "verify",
+        "restart_verified": true,
+        "seconds": 0.07
+      },
+      "measured_feed_restart_verified": {
+        "passed": true,
+        "phase": "verify",
+        "checks": 33
+      },
+      "cold_start_samples_ms": [
+        1803.201,
+        1684.771,
+        1749.537
+      ],
+      "storage": {
+        "bytes": 67108864,
+        "writable": true,
+        "empty": true
+      }
+    },
+    {
+      "id": "20261121T113940-30548c29",
       "max_vus": 10,
       "levels": [
         {
@@ -330,41 +330,41 @@
           "minimum_requests": 2,
           "observed_vus": 3,
           "semantic_errors": 0,
-          "integrity_completed": 5,
+          "integrity_completed": 7,
           "throughput_rps": 1.0,
-          "p95_ms": 6.8,
-          "p99_ms": 6.96,
+          "p95_ms": 5,
+          "p99_ms": 5,
           "error_percent": 0,
           "hold_error_percent": 0,
-          "attempt_requests": 41,
-          "attempt_throughput_rps": 4.880301801281983,
-          "attempt_p95_ms": 0.565008,
-          "attempt_p99_ms": 0.6256510000000001,
-          "duration_ms": 8401.119781,
+          "attempt_requests": 51,
+          "attempt_throughput_rps": 6.390868741178449,
+          "attempt_p95_ms": 0.6125835,
+          "attempt_p99_ms": 0.7095899999999999,
+          "duration_ms": 7980.135732,
           "k6_exit_code": 0,
-          "generator_throttled_ratio": 0.0
+          "generator_throttled_ratio": 0.0019247792914608036
         },
         {
           "vus": 5,
           "passed": true,
           "full_hold": true,
-          "hold_requests": 11,
+          "hold_requests": 15,
           "minimum_requests": 5,
           "observed_vus": 6,
           "semantic_errors": 0,
-          "integrity_completed": 4,
-          "throughput_rps": 2.2,
-          "p95_ms": 8.5,
-          "p99_ms": 10.500000000000002,
+          "integrity_completed": 5,
+          "throughput_rps": 3.0,
+          "p95_ms": 10.599999999999998,
+          "p99_ms": 11.719999999999999,
           "error_percent": 0,
           "hold_error_percent": 0,
-          "attempt_requests": 51,
-          "attempt_throughput_rps": 5.43442945938562,
-          "attempt_p95_ms": 0.9733925,
-          "attempt_p99_ms": 6.1903120000000005,
-          "duration_ms": 9384.609807,
+          "attempt_requests": 60,
+          "attempt_throughput_rps": 6.492965852207518,
+          "attempt_p95_ms": 1.4095500499999978,
+          "attempt_p99_ms": 11.397214539999975,
+          "duration_ms": 9240.769375,
           "k6_exit_code": 0,
-          "generator_throttled_ratio": 0.0
+          "generator_throttled_ratio": 0.0013741280065221841
         },
         {
           "vus": 10,
@@ -374,17 +374,17 @@
           "minimum_requests": 10,
           "observed_vus": 11,
           "semantic_errors": 0,
-          "integrity_completed": 5,
+          "integrity_completed": 4,
           "throughput_rps": 4.6,
-          "p95_ms": 10.699999999999996,
-          "p99_ms": 12.560000000000002,
+          "p95_ms": 7,
+          "p99_ms": 12.460000000000008,
           "error_percent": 0,
           "hold_error_percent": 0,
-          "attempt_requests": 71,
-          "attempt_throughput_rps": 7.3184381964717975,
-          "attempt_p95_ms": 2.190199,
-          "attempt_p99_ms": 5.637460999999986,
-          "duration_ms": 9701.52348,
+          "attempt_requests": 67,
+          "attempt_throughput_rps": 7.062149448880724,
+          "attempt_p95_ms": 2.2883448999999922,
+          "attempt_p99_ms": 3.7088001400000046,
+          "duration_ms": 9487.196566,
           "k6_exit_code": 0,
           "generator_throttled_ratio": 0.0
         }
@@ -394,28 +394,28 @@
         "checks": 145,
         "phase": "prepare",
         "restart_verified": false,
-        "seconds": 0.409
+        "seconds": 0.58
       },
       "durability": {
         "passed": true,
         "checks": 6,
         "phase": "verify",
         "restart_verified": true,
-        "seconds": 0.027
+        "seconds": 0.09
       },
       "post_load_correctness": {
         "passed": true,
         "checks": 145,
         "phase": "prepare",
         "restart_verified": false,
-        "seconds": 0.378
+        "seconds": 0.412
       },
       "post_load_durability": {
         "passed": true,
         "checks": 6,
         "phase": "verify",
         "restart_verified": true,
-        "seconds": 0.026
+        "seconds": 0.02
       },
       "measured_feed_restart_verified": {
         "passed": true,
@@ -423,9 +423,9 @@
         "checks": 33
       },
       "cold_start_samples_ms": [
-        1629.682,
-        1569.072,
-        1539.356
+        1599.617,
+        1575.326,
+        1793.697
       ],
       "storage": {
         "bytes": 67108864,

@@ -1,11 +1,11 @@
 == contract tests: prepare (fresh volume)
-{"passed": true, "checks": 145, "phase": "prepare", "restart_verified": false, "seconds": 0.118}
+{"passed": true, "checks": 145, "phase": "prepare", "restart_verified": false, "seconds": 0.11}
 == docker kill (SIGKILL) + docker start
 == contract tests: verify after restart
-{"passed": true, "checks": 6, "phase": "verify", "restart_verified": true, "seconds": 0.01}
+{"passed": true, "checks": 6, "phase": "verify", "restart_verified": true, "seconds": 0.008}
 == smoke: post + like
-{"id":29,"author":"user_42","content":"Hello DevFest","created_at":"2026-11-21T11:26:51.253Z","likes":0}
+{"id":29,"author":"user_42","content":"Hello DevFest","created_at":"2026-11-21T11:40:53.105Z","likes":0}
 {"post_id":29,"likes":1,"liked":true}
-feed[0] before kill: {'id': 29, 'author': 'user_42', 'content': 'Hello DevFest', 'created_at': '2026-11-21T11:26:51.253Z', 'likes': 1}
-feed[0] after kill:  {'id': 29, 'author': 'user_42', 'content': 'Hello DevFest', 'created_at': '2026-11-21T11:26:51.253Z', 'likes': 1}
+feed[0] before kill: {'id': 29, 'author': 'user_42', 'content': 'Hello DevFest', 'created_at': '2026-11-21T11:40:53.105Z', 'likes': 1}
+feed[0] after kill:  {'id': 29, 'author': 'user_42', 'content': 'Hello DevFest', 'created_at': '2026-11-21T11:40:53.105Z', 'likes': 1}
 {"post_id":29,"likes":1,"liked":true}  <- repeated like after restart: count unchanged
